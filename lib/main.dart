@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/configs/page_route.dart';
 import 'package:mp_tic_tac_toe/configs/theme.dart';
 import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
+import 'package:mp_tic_tac_toe/pages/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,11 +20,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: lightTheme,
-      home: const RoomPage(),
+      home: const SplashScreen(),
     );
   }
 }
 
 //1.25 -- 20-06
-//1.55 -- 21-06
+//2.26 -- 21-06
 

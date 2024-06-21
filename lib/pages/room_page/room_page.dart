@@ -11,6 +11,7 @@ class RoomPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: Padding(
