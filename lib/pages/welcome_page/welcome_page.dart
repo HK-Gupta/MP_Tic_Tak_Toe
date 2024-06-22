@@ -2,7 +2,6 @@ import 'package:concentric_transition/concentric_transition.dart';
 import 'package:concentric_transition/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
 import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
 
@@ -13,6 +12,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
+    final x = w<h ? w: h/1.3;
     var pages = [
       Container(
           padding: const EdgeInsets.all(20),
@@ -21,8 +21,8 @@ class WelcomePage extends StatelessWidget {
             children: [
               Image.asset(
                 ImagePath.splash1Path,
-                width: w / 2,
-                height: w / 2,
+                width: x / 2,
+                height: x / 2,
               ),
               const Text(
                 "Welcome",
@@ -45,8 +45,8 @@ class WelcomePage extends StatelessWidget {
             children: [
               Image.asset(
                 ImagePath.splash2Path,
-                width: w / 2,
-                height: w / 2,
+                width: x / 2,
+                height: x / 2,
               ),
               const Text(
                 "Compete",
@@ -69,8 +69,8 @@ class WelcomePage extends StatelessWidget {
           children: [
             Image.asset(
               ImagePath.splash3Path,
-              width: w / 2,
-              height: w / 2,
+              width: x / 2,
+              height: x / 2,
             ),
             const Text(
               "Scoreboard",

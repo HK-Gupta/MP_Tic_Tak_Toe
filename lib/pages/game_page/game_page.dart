@@ -17,6 +17,8 @@ class GamePage extends StatelessWidget {
     final  w = MediaQuery.of(context).size.width;
     final  h = MediaQuery.of(context).size.height;
 
+    final x = w<h ? w: h/1.3;
+
     return Scaffold(
       floatingActionButton: FloatingActionButton (
         onPressed: () {},
@@ -107,8 +109,8 @@ class GamePage extends StatelessWidget {
                   radius: const Radius.circular(15),
                   child: Container(
                     margin: const EdgeInsets.all(10),
-                    width: w/1.22,
-                    height: w/1.22,
+                    width: x/1.22,
+                    height: x/1.22,
                     decoration: BoxDecoration(
                       color: Theme.of(context)
                           .colorScheme

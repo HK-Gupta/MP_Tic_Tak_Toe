@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../configs/assets_path.dart';
+import '../../configs/assets_path.dart';
 
 class PricingArea extends StatelessWidget {
   const PricingArea({super.key});

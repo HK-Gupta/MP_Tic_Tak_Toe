@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/components/user_card.dart';
 import 'package:mp_tic_tac_toe/pages/game_page/game_page.dart';
-import 'package:mp_tic_tac_toe/pages/lobby_page/widgets/pricing_area.dart';
-import 'package:mp_tic_tac_toe/pages/lobby_page/widgets/room_info.dart';
+import 'package:mp_tic_tac_toe/pages/widgets/pricing_area.dart';
+import 'package:mp_tic_tac_toe/pages/widgets/room_info.dart';
 
 import '../../components/primary_button.dart';
 import '../../configs/assets_path.dart';

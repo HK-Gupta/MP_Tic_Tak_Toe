@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/configs/page_route.dart';
 import 'package:mp_tic_tac_toe/configs/theme.dart';
-import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
+import 'package:mp_tic_tac_toe/pages/auth/auth_page.dart';
+import 'package:mp_tic_tac_toe/pages/home_page/home_page.dart';
 import 'package:mp_tic_tac_toe/pages/splash/splash_screen.dart';
 
 void main() {
@@ -20,11 +21,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: lightTheme,
-      home: const SplashScreen(),
+      // home: const SplashScreen(),
+      home: const HomePage(),
     );
   }
 }
 
 //1.25 -- 20-06
 //2.26 -- 21-06
+//2.45 -- 22-06
 

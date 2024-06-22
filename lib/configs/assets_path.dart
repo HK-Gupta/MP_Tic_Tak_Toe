@@ -9,6 +9,12 @@ class IconsPath {
   static const xIcon = "${basePath}x.svg";
   static const googleIcon = "${basePath}google.svg";
   static const splashIcon = "${basePath}splash.svg";
+  static const singleIcon = "${basePath}single.svg";
+  static const multiIcon = "${basePath}multi.svg";
+  static const gameIcon = "${basePath}game.svg";
+  static const githubIcon = "${basePath}github.svg";
+  static const infoIcon = "${basePath}info.svg";
+  static const youtubeIcon = "${basePath}youtube.svg";
 }
 
 class ImagePath {
