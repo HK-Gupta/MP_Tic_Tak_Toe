@@ -15,6 +15,7 @@ class IconsPath {
   static const githubIcon = "${basePath}github.svg";
   static const infoIcon = "${basePath}info.svg";
   static const youtubeIcon = "${basePath}youtube.svg";
+  static const saveIcon = "${basePath}save.svg";
 }
 
 class ImagePath {
