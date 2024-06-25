@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/components/primary_icon_button.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
+import 'package:mp_tic_tac_toe/controller/auth_controller.dart';
+import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -11,6 +14,8 @@ class AuthPage extends StatelessWidget {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     final x = w<h ? w: h/1.3;
+    AuthController authController = Get.put(AuthController());
+    RxBool isLoading = false.obs;
 
     return Scaffold(
       body:Container(
@@ -34,7 +39,9 @@ class AuthPage extends StatelessWidget {
             const Spacer(),
             PrimaryIconButton(
                 buttonText: "Login/Signup with Google",
-                onTap: () {},
+                onTap: () {
+                  authController.login();
+                },
                 iconPath: IconsPath.googleIcon),
             const SizedBox(height: 15,)
           ],

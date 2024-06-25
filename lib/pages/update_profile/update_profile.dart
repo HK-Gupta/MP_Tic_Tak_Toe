@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/components/primary_icon_button.dart';
+import 'package:mp_tic_tac_toe/controller/auth_controller.dart';
 
 import '../../configs/assets_path.dart';
 
@@ -9,9 +11,12 @@ class UpdateProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthController authController = Get.put(AuthController());
+
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     final x = w<h ? w: h/1.3;
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -74,7 +79,9 @@ class UpdateProfile extends StatelessWidget {
             Spacer(),
             PrimaryIconButton(
                 buttonText: "Save",
-                onTap: () {},
+                onTap: () {
+                  authController.updateProfile();
+                },
                 iconPath: IconsPath.saveIcon),
             const SizedBox(height: 20,)
           ],

@@ -3,6 +3,7 @@ import 'package:concentric_transition/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
+import 'package:mp_tic_tac_toe/pages/auth/auth_page.dart';
 import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -86,11 +87,11 @@ class WelcomePage extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  Get.offAll(const RoomPage());
+                  Get.offAll(const AuthPage());
                 },
                 child: const Text(
                   'Get Started',
-                  style: TextStyle(color: Colors.cyanAccent, fontSize: 18),
+                  style: TextStyle(color: Colors.cyanAccent, fontSize: 18, fontWeight: FontWeight.bold),
                 )),
           ],
         ),
