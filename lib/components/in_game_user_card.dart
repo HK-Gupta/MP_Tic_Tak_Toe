@@ -15,8 +15,8 @@ class InGameUserCard extends StatelessWidget {
       children: [
         Positioned(
           child: Container(
-            height: 140,
-            width: w/2.6,
+            height: 110,
+            width: w/2.9,
             decoration: BoxDecoration(
               color: Theme.of(context)
                   .colorScheme
@@ -25,13 +25,13 @@ class InGameUserCard extends StatelessWidget {
             ),
             child: Column(
               children: [
-                const SizedBox(height: 55,),
-                Text(
-                  "Harsh Kumar",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium,
-                ),
+                const SizedBox(height: 50,),
+                // Text(
+                //   "Harsh Kumar",
+                //   style: Theme.of(context)
+                //       .textTheme
+                //       .bodyMedium,
+                // ),
                 const SizedBox(height: 5,),
                 Container(
                   height: 45,
@@ -51,7 +51,7 @@ class InGameUserCard extends StatelessWidget {
         ),
         Positioned(
           top: -50,
-          left: w/2.6/2 - 50,
+          left: w/2.9/2 - 50,
           child: Container(
             height: 100,
             width: 100,
@@ -67,6 +67,7 @@ class InGameUserCard extends StatelessWidget {
                     width: 3
                 )
             ),
+            child: Image.asset(ImagePath.boyPath),
           ),
         ),
       ],

@@ -2,6 +2,7 @@
  import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mp_tic_tac_toe/pages/auth/auth_page.dart';
 import 'package:mp_tic_tac_toe/pages/game_page/game_page.dart';
+import 'package:mp_tic_tac_toe/pages/game_page/single_player.dart';
 import 'package:mp_tic_tac_toe/pages/home_page/home_page.dart';
 import 'package:mp_tic_tac_toe/pages/lobby_page/lobby_page.dart';
 import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
@@ -18,5 +19,6 @@ var pages = [
   GetPage(name: "/game", page: () => GamePage()),
   GetPage(name: "/update", page: () => UpdateProfile()),
   GetPage(name: "/welcome", page: () => WelcomePage()),
+  GetPage(name: "/single_player", page: () => SinglePlayer()),
 
 ];

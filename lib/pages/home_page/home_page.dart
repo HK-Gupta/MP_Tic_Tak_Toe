@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mp_tic_tac_toe/components/primary_icon_button.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
 
@@ -42,7 +44,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 70,),
             PrimaryIconButton(
                 buttonText: "Single Player",
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed("/single_player");
+                },
                 iconPath: IconsPath.singleIcon,
             ),
             const SizedBox(height: 30,),

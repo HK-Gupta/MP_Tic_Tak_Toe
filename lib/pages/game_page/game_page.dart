@@ -109,8 +109,8 @@ class GamePage extends StatelessWidget {
                   radius: const Radius.circular(15),
                   child: Container(
                     margin: const EdgeInsets.all(10),
-                    width: x/1.22,
-                    height: x/1.22,
+                    width: x/1.25,
+                    height: x/1.25,
                     decoration: BoxDecoration(
                       color: Theme.of(context)
                           .colorScheme

@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/configs/page_route.dart';
 import 'package:mp_tic_tac_toe/configs/theme.dart';
+import 'package:mp_tic_tac_toe/pages/game_page/single_player.dart';
 import 'package:mp_tic_tac_toe/pages/splash/splash_screen.dart';
 import 'package:mp_tic_tac_toe/pages/update_profile/update_profile.dart';
 
@@ -34,7 +35,5 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//1.25 -- 20-06
-//2.26 -- 21-06
-//2.54 -- 22-06
+
 
