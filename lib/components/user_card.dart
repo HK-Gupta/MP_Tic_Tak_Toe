@@ -4,7 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import '../configs/assets_path.dart';
 
 class UserCard extends StatelessWidget {
-  const UserCard({super.key});
+  final String name;
+  final String imageUrl;
+  final String coins;
+  const UserCard({super.key, required this.name, required this.imageUrl, required this.coins});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class UserCard extends StatelessWidget {
               children: [
                 SizedBox(height: 60,),
                 Text(
-                  "Harsh Kumar",
+                  name,
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium,
@@ -38,7 +41,7 @@ class UserCard extends StatelessWidget {
                     SvgPicture.asset(IconsPath.coinIcon, width: 20,),
                     SizedBox(width: 10,),
                     Text(
-                      "15 COINS",
+                      "$coins COINS",
                       style: Theme.of(context).textTheme.bodyMedium,
                     )
                   ],
@@ -64,6 +67,15 @@ class UserCard extends StatelessWidget {
                         .primaryContainer,
                     width: 3
                 )
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(100),
+              child: imageUrl==""
+                ? Image.asset(ImagePath.boyPath)
+                : Image.network(
+                  imageUrl,
+                  fit: BoxFit.cover,
+              ),
             ),
           ),
         ),

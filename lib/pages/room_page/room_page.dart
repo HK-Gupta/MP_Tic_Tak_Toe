@@ -4,7 +4,10 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mp_tic_tac_toe/components/primary_button.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
+import 'package:mp_tic_tac_toe/controller/room_controller.dart';
 import 'package:mp_tic_tac_toe/pages/lobby_page/lobby_page.dart';
+
+import '../../configs/messages.dart';
 
 class RoomPage extends StatelessWidget {
   const RoomPage({super.key});
@@ -12,6 +15,8 @@ class RoomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
+    RoomController roomController = Get.put(RoomController());
+    TextEditingController roomIdController = TextEditingController();
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -20,7 +25,12 @@ class RoomPage extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SvgPicture.asset(IconsPath.backIcon),
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                      child: SvgPicture.asset(IconsPath.backIcon)
+                  ),
                   const SizedBox(width: 15,),
                   Text(
                       "Play With Private Room",
@@ -40,6 +50,7 @@ class RoomPage extends StatelessWidget {
               ),
               const SizedBox(height: 20,),
               TextField(
+                controller: roomIdController,
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
                   fillColor: Theme.of(context)
@@ -54,11 +65,19 @@ class RoomPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20,),
-              PrimaryButton(
-                  buttonText: "Join Now",
-                  onTap: () {}
+              Obx(() =>
+                roomController.isLoading.value?
+                    const CircularProgressIndicator():
+                    PrimaryButton(
+                        buttonText: "Join Now",
+                        onTap: () {
+                          roomIdController.text==""?
+                          errorToastMessage("Please Fill all the Fields"):
+                          roomController.joinRoom(roomIdController.text);
+                        }
+                    ),
               ),
-              const SizedBox(height: 80,),
+              const SizedBox(height: 40,),
               Text(
                   "Create private room",
                   style: Theme.of(context)
@@ -70,12 +89,16 @@ class RoomPage extends StatelessWidget {
               ),
               const Spacer(),
               const SizedBox(height: 20,),
-              PrimaryButton(
+              Obx(() => roomController.isLoading.value
+                  ? const CircularProgressIndicator()
+                  : PrimaryButton(
                   buttonText: "Create Room ",
                   onTap: () {
-                    Get.to(LobbyPage());
+                    roomController.createRoom();
                   }
               ),
+
+              )
             ],
           ),
         ),

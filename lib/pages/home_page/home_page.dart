@@ -4,12 +4,14 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mp_tic_tac_toe/components/primary_icon_button.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
+import 'package:mp_tic_tac_toe/controller/profile_controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ProfileController profileController = Get.put(ProfileController());
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     final x = w<h ? w: h/1.3;
@@ -52,7 +54,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 30,),
             PrimaryIconButton(
                 buttonText: "Multi Player",
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed("/room");
+                },
                 iconPath: IconsPath.multiIcon,
             ),
             const Spacer(),

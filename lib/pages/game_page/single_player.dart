@@ -49,7 +49,12 @@ class SinglePlayer extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset(IconsPath.backIcon),
+                      InkWell(
+                        onTap: () {
+                          Get.back();
+                        },
+                          child: SvgPicture.asset(IconsPath.backIcon)
+                      ),
                       const SizedBox(width: 15,),
                       Text(
                         "Play Game",

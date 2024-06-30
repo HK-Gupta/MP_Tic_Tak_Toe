@@ -1,12 +1,13 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/components/in_game_user_card.dart';
 
 import '../../configs/assets_path.dart';
 
-class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+class Multiplayer extends StatelessWidget {
+  const Multiplayer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,12 @@ class GamePage extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset(IconsPath.backIcon),
+                    InkWell(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: SvgPicture.asset(IconsPath.backIcon)
+                    ),
                     const SizedBox(width: 15,),
                     Text(
                       "Play Game",

@@ -4,7 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import '../../configs/assets_path.dart';
 
 class PricingArea extends StatelessWidget {
-  const PricingArea({super.key});
+  final String entryFee;
+  final String winningPrice;
+  const PricingArea({super.key, required this.entryFee, required this.winningPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +70,7 @@ class PricingArea extends StatelessWidget {
                 children: [
                   SvgPicture.asset(IconsPath.coinIcon),
                   SizedBox( width: 10,),
-                  Text("15 COINS"),
+                  Text("$entryFee COINS"),
                 ],
               ),
             )
@@ -88,9 +90,9 @@ class PricingArea extends StatelessWidget {
                       .secondaryContainer,
                   borderRadius: BorderRadius.circular(10)
               ),
-              child: const Row(
+              child: Row(
                 children: [
-                  Text("Winning Price"),
+                  Text("$winningPrice Price"),
                 ],
               ),
             ),

@@ -17,6 +17,13 @@ class ProfileController extends GetxController {
   final db = FirebaseFirestore.instance;
   RxBool isLoading = false.obs;
 
+
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+
   Future<void> updateProfile(String name, String imagePath) async {
     isLoading.value = true;
     try {
@@ -28,7 +35,8 @@ class ProfileController extends GetxController {
             name: name,
             email: auth.currentUser!.email,
             image: uploadedImageUrl,
-            totalWins: "0"
+            totalWins: "0",
+            role: "admin"
         );
         await db.collection("usersTTT")
             .doc(auth.currentUser!.uid)
