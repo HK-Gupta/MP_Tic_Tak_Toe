@@ -47,22 +47,7 @@ class SinglePlayer extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Get.back();
-                        },
-                          child: SvgPicture.asset(IconsPath.backIcon)
-                      ),
-                      const SizedBox(width: 15,),
-                      Text(
-                        "Play Game",
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      )
-                    ],
-                  ),
-                  const SizedBox(height: 60,),
+                  const SizedBox(height: 45,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

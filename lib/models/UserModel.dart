@@ -4,6 +4,8 @@ import 'dart:convert';
 /// email : ""
 /// image : ""
 /// totalWins : ""
+/// role : ""
+/// totalCoins : ""
 
 UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
 String userModelToJson(UserModel data) => json.encode(data.toJson());
@@ -14,7 +16,8 @@ class UserModel {
       String? email, 
       String? image, 
       String? totalWins,
-      String? role
+      String? role,
+      String? totalCoins,
   }){
     _id = id;
     _name = name;
@@ -22,6 +25,7 @@ class UserModel {
     _image = image;
     _totalWins = totalWins;
     _role = role;
+    _totalCoins = totalCoins;
 }
 
   UserModel.fromJson(dynamic json) {
@@ -31,6 +35,7 @@ class UserModel {
     _image = json['image'];
     _totalWins = json['totalWins'];
     _role = json['role'];
+    _totalCoins = json['totalCoins'];
   }
   String? _id;
   String? _name;
@@ -38,18 +43,21 @@ class UserModel {
   String? _image;
   String? _totalWins;
   String? _role;
+  String? _totalCoins;
 UserModel copyWith({  String? id,
   String? name,
   String? email,
   String? image,
   String? totalWins,
   String? role,
+  String? totalCoins,
 }) => UserModel(  id: id ?? _id,
   name: name ?? _name,
   email: email ?? _email,
   image: image ?? _image,
   totalWins: totalWins ?? _totalWins,
-  role: role?? _role
+  role: role?? _role,
+  totalCoins: totalCoins?? _totalCoins,
 );
   String? get id => _id;
   String? get name => _name;
@@ -57,6 +65,7 @@ UserModel copyWith({  String? id,
   String? get image => _image;
   String? get totalWins => _totalWins;
   String? get role => _role;
+  String? get totalCoins => _totalCoins;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -66,6 +75,7 @@ UserModel copyWith({  String? id,
     map['image'] = _image;
     map['totalWins'] = _totalWins;
     map['role'] = _role;
+    map['totalCoins'] = _totalCoins;
     return map;
   }
 

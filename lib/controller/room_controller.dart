@@ -47,6 +47,10 @@ class RoomController extends GetxController {
       winningPrice: "30",
       drawMatch: "0",
       player1: player1,
+      gameStatus: "ongoing",
+      player1Status: "waiting",
+      gameValue: ["", "", "", "", "", "", "", "", ""],
+      isXTurn: true,
     );
 
     try {
@@ -74,6 +78,7 @@ class RoomController extends GetxController {
     try{
       await db.collection("roomsTTT").doc(roomId).update({
         "player2": player2.toJson(),
+        "player2Status": "waiting",
       });
       Get.to(LobbyPage(roomId: roomId));
       successToastMessage("Joined");
@@ -83,4 +88,5 @@ class RoomController extends GetxController {
     }
     isLoading.value = false;
   }
+
 }

@@ -7,6 +7,7 @@ import '../models/RoomModel.dart';
 
 class LobbyController extends GetxController {
   final db = FirebaseFirestore.instance;
+  RxInt waitingTime = 5.obs;
 
   void copyRoomCode(String roomCode) {
     FlutterClipboard.copy(roomCode).then((value) =>
@@ -18,5 +19,26 @@ class LobbyController extends GetxController {
         .doc(roomId)
         .snapshots()
         .map((event) => RoomModel.fromJson(event.data()));
+  }
+  Future<void> startGame() async {
+    await timer(waitingTime.value);
+
+  }
+  Future<void> timer(int time) async {
+    while(time > 0) {
+      Future.delayed(const Duration(seconds: 1));
+      time--;
+      waitingTime.value = time;
+    }
+  }
+  Future<void> updatePlayer1Status(String roomId, String status) async{
+    await db.collection("roomsTTT").doc(roomId).update({
+      "player1Status": status,
+    });
+  }
+  Future<void> updatePlayer2Status(String roomId, String status) async{
+    await db.collection("roomsTTT").doc(roomId).update({
+      "player2Status": status,
+    });
   }
 }

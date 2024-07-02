@@ -16,9 +16,9 @@ class PricingArea extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 150,
+              width: 140,
               height: 55,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
                   color: Theme.of(context)
                       .colorScheme
@@ -57,9 +57,9 @@ class PricingArea extends StatelessWidget {
               ],
             ),
             Container(
-              width: 150,
+              width: 140,
               height: 55,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
                   color: Theme.of(context)
                       .colorScheme
@@ -69,7 +69,7 @@ class PricingArea extends StatelessWidget {
               child: Row(
                 children: [
                   SvgPicture.asset(IconsPath.coinIcon),
-                  SizedBox( width: 10,),
+                  SizedBox( width: 5,),
                   Text("$entryFee COINS"),
                 ],
               ),
@@ -81,9 +81,9 @@ class PricingArea extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 150,
+              width: 140,
               height: 55,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
                   color: Theme.of(context)
                       .colorScheme
@@ -123,9 +123,9 @@ class PricingArea extends StatelessWidget {
             ),
 
             Container(
-              width: 150,
+              width: 140,
               height: 55,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
                   color: Theme.of(context)
                       .colorScheme
@@ -135,7 +135,7 @@ class PricingArea extends StatelessWidget {
               child: Row(
                 children: [
                   SvgPicture.asset(IconsPath.coinIcon),
-                  SizedBox( width: 10,),
+                  SizedBox( width: 5,),
                   Text("30 COINS"),
                 ],
               ),

@@ -15,7 +15,6 @@ var pages = [
   GetPage(name: "/auth", page: () => AuthPage()),
   GetPage(name: "/home", page: () => HomePage()),
   GetPage(name: "/splash", page: () => SplashScreen()),
-  GetPage(name: "/multiplayer", page: () => Multiplayer()),
   GetPage(name: "/update", page: () => UpdateProfile()),
   GetPage(name: "/welcome", page: () => WelcomePage()),
   GetPage(name: "/single_player", page: () => SinglePlayer()),

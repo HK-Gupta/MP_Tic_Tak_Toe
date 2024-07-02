@@ -50,7 +50,7 @@ class RoomInfo extends StatelessWidget {
                                 Text(
                                     roomCode,
                                   style: const TextStyle (
-                                    fontSize: 32,
+                                    fontSize: 30,
                                     letterSpacing: 2.1,
                                     fontWeight: FontWeight.w600,
                                   ),
