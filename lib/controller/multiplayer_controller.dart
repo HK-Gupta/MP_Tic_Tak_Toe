@@ -3,10 +3,11 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 
 import '../configs/assets_path.dart';
 import '../models/RoomModel.dart';
-import '../pages/home_page/home_page.dart';
+import '../pages/home_page.dart';
 
 class MultiplayerController extends GetxController {
   ConfettiController confettiController = ConfettiController(duration: Duration(seconds: 2));
@@ -84,7 +85,7 @@ class MultiplayerController extends GetxController {
       Container(
         height: 280,
         decoration: const BoxDecoration(
-          color: Colors.greenAccent,
+          color: primaryColor,
           borderRadius: BorderRadius.only(topLeft: Radius.circular(35), topRight: Radius.circular(35))
         ),
         child: Padding(
@@ -133,7 +134,7 @@ class MultiplayerController extends GetxController {
       Container(
         height: 280,
         decoration: const BoxDecoration(
-          color: Colors.blue,
+          color: primaryColor,
           borderRadius: BorderRadius.only(topLeft: Radius.circular(35), topRight: Radius.circular(35))
         ),
         child: Padding(

@@ -17,16 +17,16 @@ class MultiplayerGameUserCard extends StatelessWidget {
       children: [
         Positioned(
           child: Container(
-            width: w/2.9,
+            width: w/3,
             decoration: BoxDecoration(
               color: Theme.of(context)
                   .colorScheme
-                  .primaryContainer,
+                  .secondary,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
               children: [
-                const SizedBox(height: 50,),
+                const SizedBox(height: 60,),
                 Text(
                   name,
                   style: Theme.of(context)
@@ -35,26 +35,26 @@ class MultiplayerGameUserCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 5,),
                 Container(
-                  height: 45,
+                  height: 50,
                   width: w/4,
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 9),
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 7),
                   decoration: BoxDecoration(
                     color: Theme.of(context)
                         .colorScheme
-                        .primary,
+                        .secondary,
                     borderRadius: BorderRadius.circular(10),
 
                   ),
                   child: SvgPicture.asset(icon),
                 ),
-                const SizedBox(height: 7,),
+                const SizedBox(height: 5,),
               ],
             ),
           ),
         ),
         Positioned(
-          top: -50,
-          left: w/2.9/2 - 50,
+          top: -40,
+          left: w/3/2 - 50,
           child: Container(
             height: 100,
             width: 100,
@@ -62,11 +62,11 @@ class MultiplayerGameUserCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
                 color: Theme.of(context)
                     .colorScheme
-                    .secondaryContainer,
+                    .secondary,
                 border: Border.all(
                     color: Theme.of(context)
                         .colorScheme
-                        .primaryContainer,
+                        .secondary,
                     width: 3
                 )
             ),

@@ -10,11 +10,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/components/in_game_user_card.dart';
 import 'package:mp_tic_tac_toe/components/multiplayer_game_user_card.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 import 'package:mp_tic_tac_toe/controller/multiplayer_controller.dart';
 import 'package:mp_tic_tac_toe/models/RoomModel.dart';
 
-import '../../configs/assets_path.dart';
-import '../home_page/home_page.dart';
+import '../configs/assets_path.dart';
+import 'home_page.dart';
 
 class Multiplayer extends StatelessWidget {
   final String roomId;
@@ -78,7 +79,7 @@ class Multiplayer extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         color: Theme.of(context)
                                             .colorScheme
-                                            .primaryContainer,
+                                            .secondary,
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Row(
@@ -86,8 +87,8 @@ class Multiplayer extends StatelessWidget {
                                           SvgPicture.asset(IconsPath.wonIcon,),
                                           const SizedBox(width: 10,),
                                           Text("WON : ${roomModel.player1!.totalWins}",
-                                            style: TextStyle(
-                                                color: Theme.of(context).colorScheme.secondary
+                                            style: const TextStyle(
+                                                color: Colors.white
                                             ),
                                           ),
                                         ],
@@ -108,7 +109,7 @@ class Multiplayer extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         color: Theme.of(context)
                                             .colorScheme
-                                            .primaryContainer,
+                                            .secondary,
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Row(
@@ -117,7 +118,7 @@ class Multiplayer extends StatelessWidget {
                                           const SizedBox(width: 10,),
                                           Text("WON : ${roomModel.player2!.totalWins}",
                                             style: TextStyle(
-                                                color: Theme.of(context).colorScheme.secondary
+                                                color: Colors.white
                                             ),
                                           ),
                                         ],
@@ -132,7 +133,7 @@ class Multiplayer extends StatelessWidget {
                               borderType: BorderType.RRect,
                               color: Theme.of(context)
                                   .colorScheme
-                                  .primary,
+                                  .secondary,
                               strokeWidth: 2,
                               dashPattern: const [10, 10],
                               radius: const Radius.circular(15),
@@ -143,7 +144,7 @@ class Multiplayer extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .background,
+                                        .onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(15)
                                 ),
                                 child: GridView.builder(
@@ -172,9 +173,9 @@ class Multiplayer extends StatelessWidget {
                                                 : index==6? const BorderRadius.only(bottomLeft: Radius.circular(15))
                                                 : index==8? const BorderRadius.only(bottomRight: Radius.circular(15)):
                                             const BorderRadius.only(),
-                                            color: playValue?[index]=='X' ? Theme.of(context).colorScheme.primary :
-                                            playValue?[index]=='O' ? Theme.of(context).colorScheme.secondary :
-                                            Theme.of(context).colorScheme.primaryContainer,
+                                            color: playValue?[index]=='X' ? blueCross :
+                                            playValue?[index]=='O' ? Theme.of(context).colorScheme.primaryContainer :
+                                            const Color(0xff222222),
                                           ),
                                           child: Center(
                                               child: playValue?[index]=='X'? SvgPicture.asset(IconsPath.xIcon, color: Colors.white, width: 40,) :
@@ -196,8 +197,8 @@ class Multiplayer extends StatelessWidget {
                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                   decoration: BoxDecoration(
                                       color: roomModel.isXTurn!
-                                          ? Theme.of(context).colorScheme.primary
-                                          : Theme.of(context).colorScheme.secondary,
+                                          ? blueCross
+                                          : Theme.of(context).colorScheme.primaryContainer,
                                       borderRadius: BorderRadius.circular(10)
                                   ),
                                   child: Row(
@@ -233,11 +234,12 @@ class Multiplayer extends StatelessWidget {
           confettiController:  multiplayerController.confettiController,
           shouldLoop: false,
           blastDirection: pi/2,
-          colors: [
-            Theme.of(context).colorScheme.primary,
-            Theme.of(context).colorScheme.secondary,
-            Colors.green,
-            Colors.blue,
+          colors: const [
+            Color(0xffFE6CD5),
+            Color(0xff1BE3C6),
+            Color(0xffBAF3D7),
+            Color(0xff14B9EB),
+            Color(0xffFCA503),
           ],
           gravity: 0.01,
           emissionFrequency: 0.05,

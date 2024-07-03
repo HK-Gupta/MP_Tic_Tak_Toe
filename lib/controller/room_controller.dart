@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/configs/messages.dart';
 import 'package:mp_tic_tac_toe/models/UserModel.dart';
-import 'package:mp_tic_tac_toe/pages/lobby_page/lobby_page.dart';
+import 'package:mp_tic_tac_toe/pages/lobby_page.dart';
 import 'package:uuid/uuid.dart';
 
 import '../models/RoomModel.dart';

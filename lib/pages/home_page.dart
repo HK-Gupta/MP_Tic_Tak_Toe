@@ -5,6 +5,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mp_tic_tac_toe/components/primary_icon_button.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
 import 'package:mp_tic_tac_toe/controller/profile_controller.dart';
+import 'package:mp_tic_tac_toe/pages/single_player.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget {
             PrimaryIconButton(
                 buttonText: "Single Player",
                 onTap: () {
-                  Get.toNamed("/single_player");
+                  Get.to(SinglePlayer());
                 },
                 iconPath: IconsPath.singleIcon,
             ),
@@ -68,7 +69,7 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(15)
                     ),
                     child: SvgPicture.asset(IconsPath.infoIcon, width: 40, height: 40,)
@@ -79,7 +80,7 @@ class HomePage extends StatelessWidget {
                   child: Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(15)
                       ),
                       child: SvgPicture.asset(IconsPath.gameIcon, width: 40, height: 40,)
@@ -90,7 +91,7 @@ class HomePage extends StatelessWidget {
                   child: Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(15)
                       ),
                       child: SvgPicture.asset(IconsPath.githubIcon, width: 40, height: 40,)
@@ -101,7 +102,7 @@ class HomePage extends StatelessWidget {
                   child: Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(15)
                       ),
                       child: SvgPicture.asset(IconsPath.youtubeIcon, width: 40, height: 40,)

@@ -5,12 +5,12 @@ import 'package:mp_tic_tac_toe/components/user_card.dart';
 import 'package:mp_tic_tac_toe/configs/messages.dart';
 import 'package:mp_tic_tac_toe/controller/lobby_controller.dart';
 import 'package:mp_tic_tac_toe/controller/room_controller.dart';
-import 'package:mp_tic_tac_toe/pages/game_page/multiplayer.dart';
+import 'package:mp_tic_tac_toe/pages/multiplayer.dart';
 import 'package:mp_tic_tac_toe/pages/widgets/pricing_area.dart';
 import 'package:mp_tic_tac_toe/pages/widgets/room_info.dart';
 
-import '../../components/primary_button.dart';
-import '../../configs/assets_path.dart';
+import '../components/primary_button.dart';
+import '../configs/assets_path.dart';
 
 class LobbyPage extends StatelessWidget {
   final String roomId;
@@ -35,7 +35,7 @@ class LobbyPage extends StatelessWidget {
                         onTap: () {
                           Get.back();
                         },
-                        child: SvgPicture.asset(IconsPath.backIcon)),
+                        child: SvgPicture.asset(IconsPath.backIcon, color: Colors.white,)),
                     const SizedBox(
                       width: 15,
                     ),

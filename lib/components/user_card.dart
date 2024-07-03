@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 
 import '../configs/assets_path.dart';
 
@@ -21,9 +22,7 @@ class UserCard extends StatelessWidget {
           child: Container(
             width: w/2.6,
             decoration: BoxDecoration(
-              color: Theme.of(context)
-                  .colorScheme
-                  .primaryContainer,
+              color: blueCross,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -39,7 +38,7 @@ class UserCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset(IconsPath.coinIcon, width: 20,),
+                    SvgPicture.asset(IconsPath.coinIcon, width: 20,color: Colors.orangeAccent,),
                     const SizedBox(width: 10,),
                     Text(
                       "$coins COINS",
@@ -55,9 +54,9 @@ class UserCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.check, size: 20, color: Colors.green,),
+                            const Icon(Icons.check, size: 20, color: Colors.greenAccent,),
                             const SizedBox(width: 4,),
-                            Text(status.capitalizeFirst!, style: TextStyle(color: Colors.green[800]),),
+                            Text(status.capitalizeFirst!, style: TextStyle(color: Colors.greenAccent),),
                           ],
                         ),
                       ):
@@ -66,9 +65,9 @@ class UserCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.watch_later_outlined, size: 20, color: Colors.orange,),
+                            Icon(Icons.watch_later_outlined, size: 20, color: Colors.orangeAccent[100],),
                             const SizedBox(width: 4,),
-                            Text(status.capitalizeFirst!, style: TextStyle(color: Colors.orange[800]),),
+                            Text(status.capitalizeFirst!, style: TextStyle(color: Colors.orangeAccent[100]),),
                           ],
                         ),
                       ),
@@ -87,13 +86,9 @@ class UserCard extends StatelessWidget {
             width: 100,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100),
-                color: Theme.of(context)
-                    .colorScheme
-                    .secondaryContainer,
+                color: blueCross,
                 border: Border.all(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .primaryContainer,
+                    color: blueCross,
                     width: 3
                 )
             ),

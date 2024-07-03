@@ -5,10 +5,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mp_tic_tac_toe/components/primary_icon_button.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 import 'package:mp_tic_tac_toe/controller/auth_controller.dart';
 import 'package:mp_tic_tac_toe/controller/profile_controller.dart';
 
-import '../../configs/assets_path.dart';
+import '../configs/assets_path.dart';
 
 class UpdateProfile extends StatefulWidget {
   const UpdateProfile({super.key});
@@ -44,10 +45,10 @@ class _UpdateProfileState extends State<UpdateProfile> {
                     width: x/2,
                     height: x/2,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: labelColor,
                         borderRadius: BorderRadius.circular(40)
                     ),
-                    child: Icon(Icons.add_a_photo_outlined, size: x/4, color: Colors.grey,),
+                    child: Icon(Icons.add_a_photo_outlined, size: x/4, color: Colors.black,),
                   ): Container(
                     width: x/2,
                     height: x/2,
@@ -70,7 +71,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       child: Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.secondary,
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(15)
                         ),
                         child: const Icon(Icons.insert_photo, color: Colors.white, size: 40,),
@@ -84,7 +85,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       child: Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.secondary,
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(15)
                         ),
                         child: const Icon(Icons.camera_enhance_rounded, color: Colors.white, size: 40,),
@@ -98,19 +99,37 @@ class _UpdateProfileState extends State<UpdateProfile> {
             TextFormField(
               controller: nameController,
               decoration: const InputDecoration(
-                hintText: "Enter your Name"
+                hintText: "Enter your Name",
+                filled: true,
+                fillColor: secondaryColor,
+                hintStyle: TextStyle(color: Colors.black),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xff6DFFFF),
+                    width: 2
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xff6DFFFF),
+                    width: 2
+                  ),
+                ),
               ),
+              style: TextStyle(color: Colors.black),
             ),
             const SizedBox(height: 15,),
             Text(
               textAlign: TextAlign.center,
               "You can change these details later from Profile page.",
               style: Theme.of(context).textTheme.bodySmall
-                ?.copyWith(color: Theme.of(context).colorScheme.primary),
+                ?.copyWith(color: Theme.of(context).colorScheme.primaryContainer),
             ),
             const Spacer(),
             Obx(() => profileController.isLoading.value
-                ? const CircularProgressIndicator()
+                ? const CircularProgressIndicator(
+              color: secondaryColor,
+            )
                 : PrimaryIconButton(
                     buttonText: "Save",
                     onTap: () {

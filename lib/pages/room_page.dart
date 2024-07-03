@@ -4,10 +4,11 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mp_tic_tac_toe/components/primary_button.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 import 'package:mp_tic_tac_toe/controller/room_controller.dart';
-import 'package:mp_tic_tac_toe/pages/lobby_page/lobby_page.dart';
+import 'package:mp_tic_tac_toe/pages/lobby_page.dart';
 
-import '../../configs/messages.dart';
+import '../configs/messages.dart';
 
 class RoomPage extends StatelessWidget {
   const RoomPage({super.key});
@@ -29,7 +30,7 @@ class RoomPage extends StatelessWidget {
                     onTap: () {
                       Get.back();
                     },
-                      child: SvgPicture.asset(IconsPath.backIcon)
+                      child: SvgPicture.asset(IconsPath.backIcon, color: Colors.white,)
                   ),
                   const SizedBox(width: 15,),
                   Text(
@@ -44,9 +45,7 @@ class RoomPage extends StatelessWidget {
                    style: Theme.of(context)
                        .textTheme
                        .bodyMedium
-                       ?.copyWith(
-                     color: Theme.of(context).colorScheme.primary
-                   )
+
               ),
               const SizedBox(height: 20,),
               TextField(
@@ -55,19 +54,21 @@ class RoomPage extends StatelessWidget {
                 decoration: InputDecoration(
                   fillColor: Theme.of(context)
                       .colorScheme
-                      .primaryContainer,
+                      .secondary,
                   filled: true,
                   hintText: "Enter Code...",
+                  hintStyle: TextStyle(color: Colors.black),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide.none
                   )
                 ),
+                  style: TextStyle(color: Colors.black)
               ),
               const SizedBox(height: 20,),
               Obx(() =>
                 roomController.isLoading.value?
-                    const CircularProgressIndicator():
+                    const CircularProgressIndicator(color: primaryColor,):
                     PrimaryButton(
                         buttonText: "Join Now",
                         onTap: () {
@@ -84,13 +85,13 @@ class RoomPage extends StatelessWidget {
                       .textTheme
                       .bodyMedium
                       ?.copyWith(
-                      color: Theme.of(context).colorScheme.primary
+                      color: Theme.of(context).colorScheme.primaryContainer
                   )
               ),
               const Spacer(),
               const SizedBox(height: 20,),
               Obx(() => roomController.isLoading.value
-                  ? const CircularProgressIndicator()
+                  ? const CircularProgressIndicator(color: primaryColor,)
                   : PrimaryButton(
                   buttonText: "Create Room ",
                   onTap: () {

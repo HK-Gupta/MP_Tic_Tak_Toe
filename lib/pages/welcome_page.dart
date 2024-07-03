@@ -3,8 +3,9 @@ import 'package:concentric_transition/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
-import 'package:mp_tic_tac_toe/pages/auth/auth_page.dart';
-import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
+import 'package:mp_tic_tac_toe/pages/auth_page.dart';
+import 'package:mp_tic_tac_toe/pages/room_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -100,7 +101,7 @@ class WelcomePage extends StatelessWidget {
 
     return Scaffold(
       body: ConcentricPageView(
-        colors: const [Colors.red, Colors.green, Colors.blue],
+        colors:  const [error, secondaryColor, primaryColor],
         itemCount: 3,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (index) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 
 import '../../configs/assets_path.dart';
 
@@ -20,14 +21,12 @@ class PricingArea extends StatelessWidget {
               height: 55,
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .secondaryContainer,
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.circular(10)
               ),
               child: const Row(
                 children: [
-                  Text("Entry Price"),
+                  Text("Entry Price", style: TextStyle(color: Colors.black),),
                 ],
               ),
             ),
@@ -61,9 +60,7 @@ class PricingArea extends StatelessWidget {
               height: 55,
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .primaryContainer,
+                  color: blueCross,
                   borderRadius: BorderRadius.circular(10)
               ),
               child: Row(
@@ -92,7 +89,7 @@ class PricingArea extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Text("$winningPrice Price"),
+                  Text("$winningPrice Price",  style: TextStyle(color: Colors.black),),
                 ],
               ),
             ),
@@ -127,9 +124,7 @@ class PricingArea extends StatelessWidget {
               height: 55,
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               decoration: BoxDecoration(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .primaryContainer,
+                  color: blueCross,
                   borderRadius: BorderRadius.circular(10)
               ),
               child: Row(

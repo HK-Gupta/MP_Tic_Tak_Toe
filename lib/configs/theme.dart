@@ -25,30 +25,33 @@ var lightTheme = ThemeData(
     background: bgColor,
     onBackground: fontColor,
     primaryContainer: containerColor,
-    onPrimaryContainer: labelColor
+    onPrimaryContainer: labelColor,
   ),
 
   textTheme: const TextTheme(
     bodyLarge: TextStyle(
         fontSize: 18,
         fontFamily: "Poppins",
-        fontWeight: FontWeight.w600
+        fontWeight: FontWeight.w600,
+        color: fontColor
     ),
     bodyMedium: TextStyle(
         fontSize: 15,
         fontFamily: "Poppins",
-        fontWeight: FontWeight.w500
+        fontWeight: FontWeight.w500,
+        color: fontColor
     ),
     bodySmall: TextStyle(
         fontSize: 12,
         fontFamily: "Poppins",
-        fontWeight: FontWeight.w400
+        fontWeight: FontWeight.w400,
+        color: labelColor
     ),
     labelMedium: TextStyle(
         fontSize: 15,
         fontFamily: "Poppins",
         fontWeight: FontWeight.w400,
-        color: labelColor
+        color: labelColor,
     ),
   )
 );

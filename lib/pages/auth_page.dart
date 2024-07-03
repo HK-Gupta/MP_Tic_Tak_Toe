@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/components/primary_icon_button.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
 import 'package:mp_tic_tac_toe/controller/auth_controller.dart';
-import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
+import 'package:mp_tic_tac_toe/pages/room_page.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -42,6 +42,7 @@ class AuthPage extends StatelessWidget {
                 onTap: () {
                   authController.login();
                 },
+
                 iconPath: IconsPath.googleIcon),
             const SizedBox(height: 15,)
           ],

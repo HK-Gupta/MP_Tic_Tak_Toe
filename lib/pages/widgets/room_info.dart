@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 import 'package:mp_tic_tac_toe/controller/lobby_controller.dart';
 import 'package:mp_tic_tac_toe/controller/room_controller.dart';
 
@@ -19,7 +20,7 @@ class RoomInfo extends StatelessWidget {
       decoration: BoxDecoration(
           color: Theme.of(context)
               .colorScheme
-              .primaryContainer,
+              .primary,
           borderRadius: BorderRadius.circular(15)
       ),
       child: Row(
@@ -29,7 +30,7 @@ class RoomInfo extends StatelessWidget {
                 children: [
                   const Row(
                     children: [
-                      Text("Generated Room Card"),
+                      Text("Generated Room Card", ),
                     ],
                   ),
                   const SizedBox(height: 20,),
@@ -39,9 +40,7 @@ class RoomInfo extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .background,
+                              color: blueCross,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Row(
@@ -66,12 +65,11 @@ class RoomInfo extends StatelessWidget {
                         },
                         child: Container(
                           padding: EdgeInsets.all(14),
-                          height: 70,
-                          width: 70,
+                          height: 65,
+                          width: 65,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Theme.of(context)
-                                  .colorScheme.secondaryContainer
+                              color: blueCross
                           ),
                           child: SvgPicture.asset(IconsPath.copyIcon),
                         
@@ -86,7 +84,7 @@ class RoomInfo extends StatelessWidget {
                         .textTheme
                         .bodyMedium
                         ?.copyWith(
-                        color: Theme.of(context).colorScheme.primary
+                        color: Colors.white
                     ),
                   ),
                 ],

@@ -24,7 +24,7 @@ class PrimaryButton extends StatelessWidget {
                     .textTheme
                     .bodyMedium
                     ?.copyWith(
-                    color: Theme.of(context).colorScheme.primaryContainer
+                    color: Colors.white
                 )
             )
           ],

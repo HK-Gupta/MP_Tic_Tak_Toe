@@ -8,7 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mp_tic_tac_toe/configs/messages.dart';
 
 import '../models/UserModel.dart';
-import '../pages/home_page/home_page.dart';
+import '../pages/home_page.dart';
 
 class ProfileController extends GetxController {
   final ImagePicker picker = ImagePicker();

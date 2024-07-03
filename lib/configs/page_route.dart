@@ -1,14 +1,14 @@
 
  import 'package:get/get_navigation/get_navigation.dart';
-import 'package:mp_tic_tac_toe/pages/auth/auth_page.dart';
-import 'package:mp_tic_tac_toe/pages/game_page/multiplayer.dart';
-import 'package:mp_tic_tac_toe/pages/game_page/single_player.dart';
-import 'package:mp_tic_tac_toe/pages/home_page/home_page.dart';
-import 'package:mp_tic_tac_toe/pages/lobby_page/lobby_page.dart';
-import 'package:mp_tic_tac_toe/pages/room_page/room_page.dart';
-import 'package:mp_tic_tac_toe/pages/splash/splash_screen.dart';
-import 'package:mp_tic_tac_toe/pages/update_profile/update_profile.dart';
-import 'package:mp_tic_tac_toe/pages/welcome_page/welcome_page.dart';
+import 'package:mp_tic_tac_toe/pages/auth_page.dart';
+import 'package:mp_tic_tac_toe/pages/multiplayer.dart';
+import 'package:mp_tic_tac_toe/pages/single_player.dart';
+import 'package:mp_tic_tac_toe/pages/home_page.dart';
+import 'package:mp_tic_tac_toe/pages/lobby_page.dart';
+import 'package:mp_tic_tac_toe/pages/room_page.dart';
+import 'package:mp_tic_tac_toe/pages/splash_screen.dart';
+import 'package:mp_tic_tac_toe/pages/update_profile.dart';
+import 'package:mp_tic_tac_toe/pages/welcome_page.dart';
 
 var pages = [
   GetPage(name: "/room", page: () => RoomPage()),

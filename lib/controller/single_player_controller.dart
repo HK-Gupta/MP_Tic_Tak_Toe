@@ -1,10 +1,12 @@
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mp_tic_tac_toe/configs/assets_path.dart';
+import 'package:mp_tic_tac_toe/configs/colors.dart';
 import 'package:mp_tic_tac_toe/configs/messages.dart';
 
-import '../pages/home_page/home_page.dart';
+import '../pages/home_page.dart';
 
 class SinglePlayerController extends GetxController {
 
@@ -12,6 +14,7 @@ class SinglePlayerController extends GetxController {
   RxBool isXTime = true.obs;
   RxInt xScore = 0.obs;
   RxInt oScore = 0.obs;
+  ConfettiController confettiController = ConfettiController(duration: Duration(seconds: 2));
 
   void onClick(int index) {
     if(isXTime.isTrue) {
@@ -67,97 +70,111 @@ class SinglePlayerController extends GetxController {
     }
   }
 
-  Future<dynamic> winnerDialog(String winner) {
+  Future<dynamic>? winnerDialog(String winner) {
+    confettiController.play();
     scoreCalculate(winner);
-    return Get.defaultDialog(
-      barrierDismissible: false,
-      title: "Winner is $winner",
-      backgroundColor: Colors.blue[300],
-      content: Padding(
-          padding: const EdgeInsets.all(10),
-        child:  Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SvgPicture.asset(IconsPath.wonIcon, width: 100,),
-            const SizedBox(height: 20,),
-            const Text(
-              "Congratulation",
-              style: TextStyle(fontSize: 18),
-            ),
-            Text(
-              "Player $winner won the match",
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Get.bottomSheet(
+      isDismissible: false,
+      Container(
+          height: 280,
+          decoration: const BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(35), topRight: Radius.circular(35))
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child:  Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                    onPressed: (){
-                      playValue.fillRange(0, 9, "");
-                      isXTime.value = true;
-                      Get.back();
-                    },
-                    child: const Text("Play Again"),
+                SvgPicture.asset(IconsPath.wonIcon, width: 100,),
+                const SizedBox(height: 20,),
+                const Text(
+                  "Congratulation",
+                  style: TextStyle(fontSize: 18),
                 ),
-                ElevatedButton(
-                  onPressed: (){
-                    Get.offAll(const HomePage());
-                  },
-                  child: const Text("Exit"),
+                Text(
+                  "Player $winner won the match",
+                  style: const TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        playValue.fillRange(0, 9, "");
+                        Get.back();
+                      },
+                      child: const Text("Play Again"),
+                    ),
+                    ElevatedButton(
+                      onPressed: (){
+                        Get.offAll(const HomePage());
+                      },
+                      child: const Text("Exit"),
+                    )
+                  ],
                 )
               ],
-            )
-          ],
-        ),
-      )
+            ),
+          )
+      ),
     );
+
   }
+
+
   Future<dynamic> drawDialog() {
-    return Get.defaultDialog(
-        barrierDismissible: false,
-        title: "Draw",
-        backgroundColor: Colors.blue[300],
-        content: Padding(
-          padding: const EdgeInsets.all(10),
-          child:  Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SvgPicture.asset(IconsPath.wonIcon, width: 100,),
-              const SizedBox(height: 20,),
-              const Text(
-                "Match Drawn",
-                style: TextStyle(fontSize: 18),
-              ),
-              const Text(
-                "You both are equivalent",
-                style: TextStyle(fontSize: 18),
-              ),
-              const SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton(
-                    onPressed: (){
-                      playValue.fillRange(0, 9, "");
-                      isXTime.value = true;
-                      Get.back();
-                    },
-                    child: const Text("Play Again"),
-                  ),
-                  ElevatedButton(
-                    onPressed: (){
-                      Get.offAll(const HomePage());
-                    },
-                    child: const Text("Exit"),
-                  )
-                ],
-              )
-            ],
+    return Get.bottomSheet(
+        isDismissible: false,
+        Container(
+          height: 280,
+          decoration: const BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(35), topRight: Radius.circular(35))
           ),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child:  Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SvgPicture.asset(IconsPath.wonIcon, width: 100,),
+                const SizedBox(height: 20,),
+                const Text(
+                  "Match Drawn",
+                  style: TextStyle(fontSize: 18),
+                ),
+                const Text(
+                  "You both are equivalent",
+                  style: TextStyle(fontSize: 18),
+                ),
+                const SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        playValue.fillRange(0, 9, "");
+                        Get.back();
+                      },
+                      child: const Text("Play Again"),
+                    ),
+                    ElevatedButton(
+                      onPressed: (){
+                        Get.offAll(const HomePage());
+                      },
+                      child: const Text("Exit"),
+                    )
+                  ],
+                )
+              ],
+            ),
+          )
         )
     );
   }
+
+
   void scoreCalculate(String winner) {
     if(winner=='X'){
       xScore = xScore + 1;
